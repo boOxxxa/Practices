@@ -3,7 +3,6 @@ import numpy as np
 def f(t, v):
     return np.sin(v * np.cos(2 * np.pi * t))
 
-
 def spectral_weight(freq, v):
     t = np.linspace(0, 10, 100)
     signal = f(t, v)
