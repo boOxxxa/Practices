@@ -6,13 +6,12 @@ class MainWindow(tk.Frame):
         self.parent = parent
         self.grid(row=0, column=0)
 
-        # Переменные, ассоциированные с виджетами
+
         self.principal = tk.DoubleVar()
         self.rate = tk.DoubleVar()
         self.years = tk.IntVar()
         self.amount = tk.StringVar()
 
-        # Задание виджетов
         principalLabel = tk.Label(self, text="Principal:")
         principalLabel.grid(row=0, column=0, sticky=tk.W)
         self.principalScale = tk.Scale(self, from_=0, to=10000, resolution=0.01, orient=tk.HORIZONTAL, variable=self.principal, command=self.updateUi)
@@ -33,7 +32,7 @@ class MainWindow(tk.Frame):
         self.actualAmountLabel = tk.Label(self, textvariable=self.amount, relief=tk.SUNKEN, anchor=tk.E)
         self.actualAmountLabel.grid(row=3, column=1, sticky=tk.W+tk.E)
 
-        # Обновление UI и задание действий по кнопкам
+        # Обновление UI
         self.updateUi()
         self.parent.bind("<Escape>", self.quit)
 
@@ -47,13 +46,11 @@ class MainWindow(tk.Frame):
     def quit(self, event=None):
         self.parent.destroy()
 root = tk.Tk()
-root.title("Integerst")  # Устанавливаем заголовок окна
+root.title("Integerst")
 
-# Создаем объект MainWindow, передавая объект Tk в качестве родительского окна
+
 main_window = MainWindow(root)
 
-# Загрузка иконки для окна
 
 
-# Запускаем главный цикл обработки событий
 root.mainloop()

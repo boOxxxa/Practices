@@ -23,3 +23,4 @@ entry.pack(pady=10)
 button = tk.Button(root, text="Показать приветствие", command=show_message, bg='beige', font=('Arial', 14))
 button.pack(pady=10)
 root.mainloop()
+#4

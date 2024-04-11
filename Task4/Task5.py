@@ -32,3 +32,4 @@ for i in range(len(buttons)):
     but.grid(row=(i//3)+1,column=(i+3)%3)
     but.bind('<Button-1>', on_click)
 root.mainloop()
+#5
