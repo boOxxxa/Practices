@@ -2,16 +2,17 @@ import tkinter as tk
 
 class MainWindow(tk.Frame):
     def __init__(self, parent):
-        super(MainWindow, self).__init__(parent)
+        super().__init__(parent)
         self.parent = parent
         self.grid(row=0, column=0)
 
-
+        # Поля
         self.principal = tk.DoubleVar()
         self.rate = tk.DoubleVar()
         self.years = tk.IntVar()
         self.amount = tk.StringVar()
 
+        # Виджеты
         principalLabel = tk.Label(self, text="Principal:")
         principalLabel.grid(row=0, column=0, sticky=tk.W)
         self.principalScale = tk.Scale(self, from_=0, to=10000, resolution=0.01, orient=tk.HORIZONTAL, variable=self.principal, command=self.updateUi)
@@ -32,8 +33,10 @@ class MainWindow(tk.Frame):
         self.actualAmountLabel = tk.Label(self, textvariable=self.amount, relief=tk.SUNKEN, anchor=tk.E)
         self.actualAmountLabel.grid(row=3, column=1, sticky=tk.W+tk.E)
 
-        # Обновление UI
+        # Вызываем метод updateUi()
         self.updateUi()
+
+        # Задаем действие на кнопку для выхода
         self.parent.bind("<Escape>", self.quit)
 
     def updateUi(self, *ignore):
@@ -45,12 +48,3 @@ class MainWindow(tk.Frame):
 
     def quit(self, event=None):
         self.parent.destroy()
-root = tk.Tk()
-root.title("Integerst")
-
-
-main_window = MainWindow(root)
-
-
-
-root.mainloop()

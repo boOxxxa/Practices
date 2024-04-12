@@ -57,7 +57,7 @@ def back(image_number):
 
 
 def update_info(image_number):
-    info_label.config(text=f"Фотография {image_number} из {len(photos)}")
+    info_label.config(text=f"Фотография {image_number} from {len(photos)}")
 
 
 photo_label = tk.Label(root, image=photos[0])
@@ -70,8 +70,7 @@ button_back.grid(row=1, column=0, padx=5, pady=5)
 button_forward = tk.Button(root, text=">", command=lambda: forward(2))
 button_forward.grid(row=1, column=2, padx=5, pady=5)
 
-button_quit = tk.Button(root, text="Выход", command=root.quit)
-button_quit.grid(row=2, column=1, pady=10)
+
 
 
 info_label = tk.Label(root, text="", bd=1, relief=tk.SUNKEN, anchor=tk.E)
